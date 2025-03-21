@@ -5,7 +5,6 @@ Omni Calculator is a versatile and user-friendly calculator application built us
 
 ## Navigate
  - [Install](#Install)
-   - [Copy Repository](#Clone_repository)
  - [Features](#Features)
  - [Screenshots](#Screenshots)
  - [Acknowledgments](#Acknowledgments)
