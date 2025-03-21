@@ -51,5 +51,5 @@ cd Omni-Calculator
 - `Pillow`: For handling image resources.
 
 - `numpy, sumpy and matplotlib`: For advanced mathematical and graphing functionality.
-
+- `CurrencyConverter`: For function to convert currencies
 
