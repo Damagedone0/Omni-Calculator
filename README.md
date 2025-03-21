@@ -33,7 +33,6 @@ Omni Calculator is a versatile and user-friendly calculator application built us
 ![scrn2](https://github.com/user-attachments/assets/3cb140ce-aa28-4753-9892-015bdfd98220)
 
 # Install
-## Program
   - Go To Releases
   - Install Release
     
