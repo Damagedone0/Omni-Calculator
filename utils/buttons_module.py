@@ -1,3 +1,4 @@
+#Libraries import
 from tkinter import END
 import customtkinter
 from utils.calculator_modes import science_frame, basic_frame
@@ -12,7 +13,7 @@ from utils.math_module import math_func
 #Buttons of calculator (splitted by mode of calculator)
 
 
-
+#Basic mode buttons
 def basic_mode():
     #basic mode buttons initialize
     button_clear = customtkinter.CTkButton(basic_frame,text="C",font=("Segoe UI", 20),bg_color=base_color, width=base_width,height=base_height,fg_color="#960300",hover_color=hover_color, command= lambda: clear())
@@ -60,7 +61,7 @@ def basic_mode():
     button_equal = customtkinter.CTkButton(basic_frame,text="=",font=("Segoe UI", 20),bg_color=base_color, width=base_width,height=base_height,fg_color=button_color3,hover_color=hover_color, command= lambda: calculate())
     button_equal.grid(row=4,column=3)
 
-
+#Science mode buttons
 def scientific_mode():
         
     #buttons for scientific calculator
