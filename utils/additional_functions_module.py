@@ -32,6 +32,7 @@ def graph_build_win():
     graph_win.wm_transient(root)
     graph_win.after(201, lambda: graph_win.iconbitmap(icon_img))
 
+    # function to build graph plots
     def build_graph():
         entry_input = graph_entry.get()
         if entry_input != "":
@@ -120,7 +121,7 @@ def graph_build_win():
             except Exception as e:
                 # Stop and hide the progress bar if an error occurs
                 messagebox.showerror("Error", f"Invalid input: {e}")
-
+    #Help For write graph of a function correctly 
     def help_syn():
         messagebox.showinfo("Help Syntax","\nUSE X,Y AS UNKNOWNS \n\n x^2(or y) → ** \n\ndivision → / \n\nmultiply →  * \n\n")
 
@@ -327,32 +328,33 @@ def currency_win():
 
 
 
-
+    #List of currencies
     list_cur = ["$ - USD", "¥ - JPY", "€ - EUR", "£ - GBP", "¥ - CNY"]
     input_base = StringVar(cur_win)
     input_base.set(list_cur[0])
     output_base = StringVar(cur_win)
     output_base.set(list_cur[2])
-
+    
+    # Input option menu for choose currency
     option_input = customtkinter.CTkOptionMenu(cur_win, values=list_cur, variable=input_base, font=("Segoe UI", 30),bg_color=base_color,fg_color=hover_color , button_hover_color=base_color, dropdown_hover_color=base_color, button_color=button_color)
     option_input.place(x=30, y=0)
 
     option_output = customtkinter.CTkOptionMenu(cur_win, values=list_cur, variable=output_base,font=("Segoe UI", 30),bg_color=base_color,fg_color=hover_color , button_hover_color=base_color, dropdown_hover_color=base_color, button_color=button_color)
     option_output.place(x=30, y=125)
-
+    #Input Entry
     input_cur = customtkinter.CTkEntry(cur_win,width=150, height=30,font=("Segoe UI", 30), justify = "center", bg_color=base_color,fg_color=base_color)
     input_cur.place(x=25,y=50)
 
 
-
+    #Output Entry
     output_cur = customtkinter.CTkEntry(cur_win, width=150, height=30, font=("Segoe UI", 30), justify="center", bg_color=base_color,fg_color=base_color, state="disabled")
     output_cur.place(x=25, y=170)
-
+    
+    #Button to convert currencies
     convert_button = customtkinter.CTkButton(cur_win, width= 50, height=40, font=("Segoe UI", 30), text="Convert",fg_color="#960303",bg_color=base_color,hover_color=hover_color, command=convert_currency)
     convert_button.place(x=40,y=240)
 
 #Units of measurement converter
-
 def Units_Converter():
     units_win = CTkToplevel(root)
     units_win.title("units of measurement")
@@ -362,6 +364,7 @@ def Units_Converter():
     units_win.wm_transient(root)
     units_win.after(201, lambda : units_win.iconbitmap(icon_img))
 
+    
     def convert_unit():
         input_value = input_entry.get()
         try:
@@ -439,39 +442,42 @@ def Units_Converter():
         result_entry.insert(0, str(result_value))
         result_entry.configure(state="disabled")
 
-
+    #Input Text for label
     input_text = "Input Unit"
 
+    #Input entry for unit
     input_entry = customtkinter.CTkEntry(units_win, width=150,font=("Segoe UI", 20), justify="center",bg_color=base_color)
     input_entry.place(x=50, y=100)
-
+    #Text For Output label
     result = "Result Unit"
-
+    #Entry with result of convertation
     result_entry = customtkinter.CTkEntry(units_win, width=150,font=("Segoe UI", 20), state="disabled",bg_color=base_color, justify= "center")
     result_entry.place(x=300, y=100)
-
+    
+    #Input List
     input_list = ["Km/H", "M/Sec", "Kg", "Gr", "L", "Ml", "M^2","M^3","Km^2","Km^3", "Km", "M", "Sm","Inches"]
     input_base = StringVar(units_win)
     input_base.set(input_list[0])
-
+    #output list
     output_list = ["Km/H", "M/Sec", "Kg", "Gr", "L", "Ml", "M^2", "M^3","Km^2","Km^3", "Km", "M","Sm","Inches"]
     output_base = StringVar(units_win)
     output_base.set(input_list[0])
-
+    #labels for entries
     under_one_label = customtkinter.CTkLabel(units_win, width=100,font=("Segoe UI", 15), height=20, text=input_text, bg_color=base_color)
     under_one_label.place(x=60, y=150)
     under_two_label = customtkinter.CTkLabel(units_win, width=100,font=("Segoe UI", 15), height=20, text=result,bg_color=base_color)
     under_two_label.place(x=340, y=150)
-
+    #output option menu 
     output_base = customtkinter.CTkOptionMenu(units_win, variable= output_base,font=("Segoe UI", 20), values=output_list, bg_color=base_color,fg_color=hover_color , button_hover_color=base_color, dropdown_hover_color=base_color, button_color=button_color)
     output_base.place(y=10, x=50)
-
+    #input option menu
     input_base = customtkinter.CTkOptionMenu(units_win, variable= input_base,font=("Segoe UI", 20), values=input_list, bg_color=base_color,fg_color=hover_color , button_hover_color=base_color, dropdown_hover_color=base_color, button_color=button_color)
     input_base.place(x=300, y=10)
 
+    
     text_label = customtkinter.CTkLabel(units_win, text="Choose Unit of Measurement To Convert",font=("Segoe UI", 20), width=100, height=10,bg_color=base_color)
     text_label.pack(pady=50)
-
+    #button for convert units
     button = customtkinter.CTkButton(units_win, text="Convert",font=("Segoe UI", 20), height=5, width=10, fg_color="#32a852",hover_color="#0c5e22", command=convert_unit)
     button.place(x=215, y=200)
 
